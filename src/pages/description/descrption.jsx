@@ -43,17 +43,6 @@ const Descrption = ({ backgroundColor }) => {
                 <div className='contenedor-mail' alt='icono de mail para contactarme'>
                     <img src={MediaMariposa} className='middle-mariposa'/>
                 </div>
-                <div className='conteiner-nav'>
-                    <a href="https://github.com/yaelcampos" target="_blank" rel="noopener noreferrer">
-                        <h2>Source</h2>
-                    </a>
-                    <a href="https://github.com/yaelcampos" target="_blank" rel="noopener noreferrer">
-                        <h2>Trabajos</h2>
-                    </a>
-                    <a href="https://github.com/yaelcampos" target="_blank" rel="noopener noreferrer">
-                        <h2>En linea</h2>
-                    </a>
-                </div>
             </section>
         </>
     )

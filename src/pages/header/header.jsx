@@ -1,13 +1,14 @@
 
 import React from 'react';
 import Butterfly from '../../images/full-mariposa.svg';
+import Nav from '../../components/nav/nav';
 
 const Header = () => {
 
     return (
-        <nav className='background_header'>
-            <img src={Butterfly} alt="Logo SVG" className='logo-img' />     
-        </nav>
+        <section className='background_header'>
+            <Nav/>     
+        </section>
     );
 };
 
