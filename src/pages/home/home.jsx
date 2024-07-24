@@ -1,8 +1,7 @@
 import React from 'react';
 import Header from '../header/header';
-
 import Descrption from '../description/descrption';
-import Skills from '../skill/skill'
+import Skills from '../skills/skills'
 import Work from '../work/work';
 import Works from '../works/works';
 import Bio from '../bio/bio';
@@ -12,20 +11,21 @@ import Footer from '../footer/footer';
 /*  /import Animation from '../../components/animation/Animation'; */
 
 
-const home = () => {
+const Home = () => {
     return (
         <>
-            <Header/>
-            <Descrption backgroundColor="lightgreen"/>
+            <Header />
+            <Descrption/>
             <Work/>
-            <Works backgroundColor="background-image: linear-gradient (20deg,#7c598c,#296f92);"/>
-            <Skills/>
-            <OnTheInternet/>
-            <Bio/>
-            <Love/> 
-            <Footer/>
+            <Works/>
+            <Bio />
+            <Skills />
+            <OnTheInternet />
+            <Love />
+            <Footer />
+
         </>
-    )
+    );
 }
 
-export default home
+export default Home;

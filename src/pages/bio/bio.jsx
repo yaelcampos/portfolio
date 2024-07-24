@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react';
+import { Parallax } from 'react-scroll-parallax';
 
 const bio = () => {
-    return (
-        <>
-            <div className='background_'>
-                <main className='main-bio'>
+  return (
+    <Parallax y={[-20, 20]}>
+    <section className='background_skills'>
+      <div>
+      <main className='main-bio'>
                     <h3>Bio</h3>
                     <div className='div_span'>
                         <span className='span'>1991</span>
@@ -34,9 +36,11 @@ const bio = () => {
                         en Desarrollo de Software
                     </div>
                 </main>
-            </div>
-        </>
-    )
-}
 
-export default bio
+      </div>
+    </section>
+    </Parallax>
+  );
+};
+
+export default bio;

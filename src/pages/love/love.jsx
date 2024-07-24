@@ -8,7 +8,7 @@ const love = () => {
                 <div className='main-bio'>
                     <h3>I ♥</h3>
                     <p className='pharagraph_love'>
-                        Arte, tejer, los colores, plantas y aprender cosas nuevas.
+                        Arte, tejer, los colores, plantas, a Charlie y aprender cosas nuevas.
                     </p>
                 </div>
                 

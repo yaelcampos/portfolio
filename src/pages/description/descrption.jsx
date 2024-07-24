@@ -2,34 +2,12 @@ import React, { useEffect, useState } from 'react';
 import Yael from '../../images/yael.jpeg';
 import MediaMariposa from '../../images/472959.svg';
 
-const Descrption = ({ backgroundColor }) => {
-    const [currentBackgroundColor, setCurrentBackgroundColor] = useState('#7abcac');
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const scrollY = window.scrollY;
-
-            // Cambia el color de fondo según la posición del scroll
-            if (scrollY > 10) {
-                setCurrentBackgroundColor('linear-gradient(20deg,#7c598c,#296f92');
-            } else {
-                setCurrentBackgroundColor('rgba(119, 64, 105, 0.8)');
-            }
-        };
-
-        // Agrega el event listener cuando el componente se monta
-        window.addEventListener('scroll', handleScroll);
-
-        // Elimina el event listener cuando el componente se desmonta
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, [backgroundColor]);
+const Descrption = () => {
     return (
         <>
-            <section class='section-despcription' style={{ background: currentBackgroundColor }}>
+            <section class='section-despcription'>
                 <div class='div-descrition'>
-                    <p>Hola, soy desarrolladora front end con sede en Buenos Aires!</p>
+                    <p>Hola, soy desarrolladora front end viviendo en Buenos Aires!</p>
                 </div>
                 <div class='div-name_photo__yael'>
                     <div class='mt-8' >

@@ -3,15 +3,19 @@ import Home from "./pages/home/home.jsx";
 import './output.css'
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ChakraProvider } from '@chakra-ui/react'
+
 
 function App() {
   return (
+    <ChakraProvider>
     <BrowserRouter>
       {/* <Link to="/">Home</Link> */}
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
     </BrowserRouter>
+    </ChakraProvider>
   );
 }
 

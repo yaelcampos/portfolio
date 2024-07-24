@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Button from "../../components/button/button";
 import { ReactComponent as Linkedln } from "../../images/linkedin.svg";
-import { ReactComponent as Instagran } from "../../images/instagram.svg";
+//import Github from "../../images/github_git_hub_logo_icon_132878.svg";
 import Nube from "../../images/04-NUBE.png";
 import Mail from "../../images/Mail.svg";
 import Yael_con_cafe from "../../images/WhatsApp Image 2024-01-29 at 09.58.42 .jpeg";
@@ -47,13 +47,15 @@ const OnInternet = () => {
                             icon={Linkedln}
                         />
                     </li>
+                    {/*  
                     <li>
                         <Button
-                            href="https://www.instagram.com/yael.camps/"
-                            titulo="Instagram"
-                            icon={Instagran}
+                            href="https://github.com/yaelcampos/portfolio"
+                            titulo="Github"
+                            icon={Github}
                         />
                     </li>
+                    */}
                 </ul>
             </div>
             <div>
@@ -70,54 +72,65 @@ const OnInternet = () => {
                             &times;
                         </span>
                         {submitted ? (
-                            <p>¡Gracias por comunicarte!</p>
+                            <p>¡Gracias por comunicarte! </p>
                         ) : (
                             <>
-                                <img
-                                    className="img_yael_y_sucafe"
-                                    src={Yael_con_cafe}
-                                    alt="foto de Yael"
-                                />
+                                <div className="contengo_imagen_popup" >
+                                    <img
+                                        className="img_yael_y_sucafe"
+                                        src={Yael_con_cafe}
+                                        alt="foto de Yael"
+                                    />
+                                    <p>¡Hola! 👋  </p>
+                                    <h2>!Si estas interesado en mi trabajo,</h2>
+                                    <h2>escribime!</h2>
+                                </div>    
+
                                 <form id="form" onSubmit={handleSubmit}>
                                     <div className="conteneiner-nombre_mail">
-                                        <div className="conteneiner-nombre">
-                                            <label htmlFor="nombre">Nombre</label>
-                                            <input
-                                                type="text"
-                                                id="nombre"
-                                                name="nombre"
-                                                required
-                                            />
-                                        </div>
-                                        <div className="conteneiner-email">
-                                            <label htmlFor="email">Correo Electronico</label>
-                                            <input
-                                                type="email"
-                                                id="email"
-                                                name="email"
-                                                required
-                                            />
+                                        <div className="conteiner-labels">
+                                            <div className="conteneiner-nombre">
+                                                <label htmlFor="nombre">Nombre</label>
+                                                <input
+                                                    type="text"
+                                                    id="nombre"
+                                                    name="nombre"
+                                                    required
+                                                />
+                                            </div>
+                                            <div className="conteneiner-email">
+                                                <label htmlFor="email">Correo Electronico</label>
+                                                <input
+                                                    type="email"
+                                                    id="email"
+                                                    name="email"
+                                                    required
+                                                />
+                                            </div>
+
+                                            <div className="conteinder_asunto">
+                                                <label htmlFor="asunto">Asunto</label>
+                                                <input
+                                                    type="text"
+                                                    id="asunto"
+                                                    name="asunto"
+                                                    required
+                                                />
+                                                <label htmlFor="mensaje">Enviar un mensaje</label>
+                                                <textarea
+                                                    className="mensaje"
+                                                    id="mensaje"
+                                                    name="mensaje"
+                                                    required
+                                                ></textarea>
+                                            </div>
+                                            <button 
+                                                className="button__send"
+                                                type="submit">
+                                                Enviar
+                                            </button>
                                         </div>
                                     </div>
-                                    <div className="conteinder_asunto">
-                                        <label htmlFor="asunto">Asunto</label>
-                                        <input
-                                            type="text"
-                                            id="asunto"
-                                            name="asunto"
-                                            required
-                                        />
-                                        <label htmlFor="mensaje">Enviar un mensaje</label>
-                                        <textarea
-                                            className="mensaje"
-                                            id="mensaje"
-                                            name="mensaje"
-                                            required
-                                        ></textarea>
-                                    </div>
-                                    <button type="submit">
-                                        Enviar
-                                    </button>
                                 </form>
                             </>
                         )}
