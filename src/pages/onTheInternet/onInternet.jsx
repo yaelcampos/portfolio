@@ -5,6 +5,7 @@ import { ReactComponent as Linkedln } from "../../images/linkedin.svg";
 import Nube from "../../images/04-NUBE.png";
 import Mail from "../../images/Mail.svg";
 import Yael_con_cafe from "../../images/WhatsApp Image 2024-01-29 at 09.58.42 .jpeg";
+//import '../../server.js';
 
 
 const OnInternet = () => {
@@ -32,7 +33,7 @@ const OnInternet = () => {
                 <ul>
                     <li>
                         <a
-                            href="/downloads/CamposYaelFrontEnd.pdf"
+                            href="/downloads/Yael Campos Cv.pdf"
                             className="buttons"
                             download
                         >
@@ -86,7 +87,7 @@ const OnInternet = () => {
                                     <h2>escribime!</h2>
                                 </div>    
 
-                                <form id="form" onSubmit={handleSubmit}>
+                                <form id="form" className="Form" onSubmit={handleSubmit}>
                                     <div className="conteneiner-nombre_mail">
                                         <div className="conteiner-labels">
                                             <div className="conteneiner-nombre">

@@ -49,19 +49,24 @@ const Nav = () => {
                         icon={<HamburgerIcon />}
                         variant='outline'
                     />
-                    <MenuList>
-                        <MenuItem >
-                            <a href="https://github.com/yaelcampos" target="_blank" rel="noopener noreferrer">
+                    <MenuList
+                        className='menuItem'
+                    >   
+                        <MenuItem 
+                            className='menuItem'>
+                            <a href="https://github.com/yaelcampos" className='menuItem' target="_blank" rel="noopener noreferrer">
                                 <h2>Source</h2>
                             </a>
                         </MenuItem>
-                        <MenuItem>
-                            <a href="https://github.com/yaelcampos" target="_blank" rel="noopener noreferrer">
+                        <MenuItem
+                            className='menuItem'>
+                            <a href="https://github.com/yaelcampos" className='menuItem' target="_blank" rel="noopener noreferrer">
                                 <h2>Trabajos</h2>
                             </a>
                         </MenuItem>
-                        <MenuItem >
-                            <a href="https://github.com/yaelcampos" target="_blank" rel="noopener noreferrer">
+                        <MenuItem 
+                        className='menuItem'>
+                            <a href="https://github.com/yaelcampos" className='menuItem' target="_blank" rel="noopener noreferrer">
                                 <h2>En línea</h2>
                             </a>
                         </MenuItem>
@@ -69,13 +74,19 @@ const Nav = () => {
                 </Menu>
             ) : (
                 <nav>
-                    <a href="https://github.com/yaelcampos" target="_blank" rel="noopener noreferrer">
+                    <a
+                        className='button_hamburguer'
+                        href="https://github.com/yaelcampos" target="_blank" rel="noopener noreferrer">
                         <h2>Source</h2>
                     </a>
-                    <a href="https://github.com/yaelcampos" target="_blank" rel="noopener noreferrer">
+                    <a 
+                        className='button_hamburguer'
+                        href="https://github.com/yaelcampos" target="_blank" rel="noopener noreferrer">
                         <h2>Trabajos</h2>
                     </a>
-                    <a href="https://github.com/yaelcampos" target="_blank" rel="noopener noreferrer">
+                    <a 
+                        className='button_hamburguer'
+                        href="https://github.com/yaelcampos" target="_blank" rel="noopener noreferrer">
                         <h2>En línea</h2>
                     </a>
                 </nav>

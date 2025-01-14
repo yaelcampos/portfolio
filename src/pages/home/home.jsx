@@ -4,11 +4,11 @@ import Descrption from '../description/descrption';
 import Skills from '../skills/skills'
 import Work from '../work/work';
 import Works from '../works/works';
-import Bio from '../bio/bio';
 import Love from '../love/love';
 import OnTheInternet from '../onTheInternet/onInternet';
 import Footer from '../footer/footer';
-/*  /import Animation from '../../components/animation/Animation'; */
+/*  /import Animation from '../../components/animation/Animation';
+import Bio from '../bio/bio'; */
 
 
 const Home = () => {
@@ -18,7 +18,7 @@ const Home = () => {
             <Descrption/>
             <Work/>
             <Works/>
-            <Bio />
+           {/* <Bio /> */}
             <Skills />
             <OnTheInternet />
             <Love />

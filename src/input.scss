@@ -16,7 +16,6 @@
     --off-white: #faf8f7;
     --just-white: #fff;
     --background: #774069;
-    --green: #c3efe3;
     --violet: #57457d;
     --soft-violet: #625387;
     --hue: 322;
@@ -49,13 +48,13 @@
 }
 
 .background_online {
-    background-color: var(--background);
+    background-color: rgba(119, 64, 105, 0.8);
     display: grid;
     justify-items: center;
     grid-template-columns: 1fr;
     gap: 20px;
     padding: 20px;
-    opacity: 0.8;
+    opacity: 1;
 }
 
 .p_footer {
@@ -81,14 +80,11 @@
 .background_header {
     display: flex;
     justify-content: center;
-    z-index: 2;
-    position: fixed;
+    position: sticky;
+    margin: 1rem 0;
+    top: 0;
     width: 100%;
-    background: #20202380;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    transition: background 0.3s, color 0.3s;
-    /* Transiciones suaves */
+    z-index: 1;
 }
 
 .background_header.scrolled {
@@ -222,9 +218,8 @@ nav {
     right: 3%;
     bottom: 2%;
     transform: translate(-5%);
-    z-index: -1;
     background: #B19CDF;
-    ;
+    opacity: 1;
     border-radius: 50%;
     width: 5%;
     padding: 0.8%;
@@ -377,7 +372,7 @@ h3 {
     color: var(--just-white);
 }
 
-#form {
+.Form{
     width: 100% !important;
     display: flex;
     flex-direction: column;
@@ -390,6 +385,7 @@ h3 {
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
+    color: var(--black);
 }
 
 label {
@@ -431,25 +427,29 @@ textarea {
 
 /*box of skills*/
 
-.box {
-    width: 120px;
-    height: 120px;
-    color: var(--background);
-    background-color: #f0f0f0;
-    padding: 10px;
-    border-radius: 50%;
-    border: 10px solid rgba(119, 64, 105, 0.8) !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-
 .box p {
-    color: inherit;
+    display: inline-block;
+    position: relative;
+    color: var(--just-white);
 }
 
+.box p::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1rem; /* Ajusta el grosor del tachado */
+    top: 50%; /* Coloca el tachado en el medio del texto */
+    left: 0;
+    background-color: #E91E63; /* Ajusta el color del tachado */
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.25s ease-out;
+    z-index: -1
+}
+
+.box p:hover::after {
+    transform: scaleX(1);
+  }
 /*works*/
 /*vista completa*/
 .conteneiner_cards_of_works {
@@ -519,7 +519,6 @@ textarea {
     padding: 20px;
     box-sizing: border-box;
     z-index: 1;
-
 }
 
 .tarjetita {
@@ -553,7 +552,7 @@ textarea {
 }
 
 .conteiner-card_skills {
-    width: 100%;
+    width: 485px;
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
@@ -600,9 +599,13 @@ textarea {
     text-indent: -3.4em;
 }
 
-.span {
+span {
     font-weight: bold;
     margin-right: 1em;
+    margin-bottom: .5rem;
+    //transform: rotate(-5deg);
+    transform-origin: bottom left;
+    padding-left: .2rem;
 }
 
 
@@ -620,191 +623,194 @@ textarea {
             lch(calc(var(--lightness) - 10) var(--chroma) var(--hue)) 60%,
             lch(calc(var(--lightness) - 30) var(--chroma) var(--hue)) 70%,
             lch(calc(var(--lightness) - 40) var(--chroma) var(--hue)) 70%,
-    )}
+        )
+}
 
-    .background_skills>div {
-        display: flex;
-        padding: 120px;
-    }
+.background_skills>div {
+    display: flex;
+    padding: 120px;
+}
 
 
-    /*i love */
-    .pharagraph_love {
-        color: var(--just-white) !important;
-        ;
-    }
+/*i love */
+.pharagraph_love {
+    color: var(--just-white) !important;
+    ;
+}
 
-    /*buttons  */
-    .buttons {
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        color: var(--just-white);
-    }
+/*buttons  */
+.buttons {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: var(--just-white);
+}
 
-    .buttons:hover {
-        background-color: var(--green);
-        padding: 8px;
-        border-radius: 10px;
-        width: fit-content;
-    }
+.buttons:hover {
+    background-color:#B19CDF;
+    padding: 8px;
+    border-radius: 10px;
+    width: fit-content;
+}
 
-    .icon {
-        margin-right: 5px;
-    }
+.icon {
+    margin-right: 5px;
+}
 
-    li {
-        list-style-type: none;
-        border-radius: 0;
-        margin-bottom: 20px;
-    }
+li {
+    list-style-type: none;
+    border-radius: 0;
+    margin-bottom: 20px;
+}
 
-    .title {
-        color: var(--just-white)
-    }
+.title {
+    color: var(--just-white)
+}
 
-    .main_description__work h3 {
-        margin-bottom: 10px;
-    }
+.main_description__work h3 {
+    margin-bottom: 10px;
+}
 
-    .img-nube {
-        width: 24px;
-        height: 24px;
-        margin-right: 5px;
-    }
+.img-nube {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+}
 
-    .background_footer {
-        --s: 220px;
-        /* control the size */
-        --c1: #fff;
-        --c2: #774069;
+.background_footer {
+    --s: 220px;
+    /* control the size */
+    --c1: #fff;
+    --c2: #774069;
 
-        display: grid;
-        justify-items: center;
-        grid-template-columns: 1fr;
-        gap: 20px;
-        padding: 20px;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
 
-        --_g: radial-gradient(#0000 60%, var(--c1) 61% 63%, #0000 64% 77%, var(--c1) 78% 80%, #0000 81%);
-        --_c:, #0000 75%, var(--c2) 0;
-        background: conic-gradient(at 12% 20% var(--_c)) calc(var(--s)* .44) calc(.9*var(--s)),
+    --_g: radial-gradient(#0000 60%, var(--c1) 61% 63%, #0000 64% 77%, var(--c1) 78% 80%, #0000 81%);
+    --_c: , #0000 75%, var(--c2) 0;
+    background: conic-gradient(at 12% 20% var(--_c)) calc(var(--s)* .44) calc(.9*var(--s)),
         conic-gradient(at 12% 20% var(--_c)) calc(var(--s)*-.06) calc(.4*var(--s)),
         conic-gradient(at 20% 12% var(--_c)) calc(.9*var(--s)) calc(var(--s)* .44),
         conic-gradient(at 20% 12% var(--_c)) calc(.4*var(--s)) calc(var(--s)*-.06),
         var(--_g), var(--_g) calc(var(--s)/2) calc(var(--s)/2) var(--c2);
-        background-size: var(--s) var(--s);
+    background-size: var(--s) var(--s);
+}
+
+/*Medias querys*/
+@media (max-width: 968px) {
+    /*cards*/
+    .conteneiner_cards {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 90px;
+        margin-bottom: 3rem;
     }
 
-    /*Medias querys*/
-    @media (max-width: 968px) {
-
-        /*cards*/
-        .conteneiner_cards {
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
-            gap: 90px;
-        }
-
-        .background_skills>div {
-            padding: 15%;
-            width: 100vw;
-            display: flex;
-            align-content: center;
-            align-items: center;
-        }
-        .conteneiner_cards_of_works {
-            padding: 30px;
-        }
+    .background_skills>div {
+        padding: 15%;
+        width: 100vw;
+        display: flex;
+        align-content: center;
+        align-items: center;
     }
 
-    @media (max-width: 768px) {
-        .hamburgues_menu {
-            display: block;
-        }
-
-        nav {
-            display: none;
-        }
-
-        .icon_hamburgues {
-            width: 3%;
-        }
-        .box-filtro {
-            display: flex;
-            gap: 10%;
-            flex-direction: column;
-        }
-
+    .conteneiner_cards_of_works {
+        padding: 30px;
     }
 
-    @media (max-width: 500px) {
-
-        .main-bio,
-        .div-name_photo__yael,
-        .main_description__work,
-        .conteneiner_h3,
-        .modal,
-        .background_skills>div,
-        .container,
-        .conteiner-card_skills {
-            width: 100%;
-        }
-
-        .div-descrition {
-            margin: 2rem;
-        }
-
-        .div-name_photo__yael {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .background_skills>div {
-            padding: 20px;
-        }
-
-        .modal {
-            padding: 2%;
-        }
-
-        .div-name_photo__yael {
-            display: flex;
-            flex-direction: column;
-            margin-top: 32px;
-            align-items: center;
-        }
-
-        figure {
-            display: none;
-        }
-
-        .img_yael_y_sucafe {
-            display: none;
-        }
-
-        .modal {
-            position: fixed;
-            top: 15%;
-            left: 100%;
-            /* Inicialmente fuera de la pantalla a la derecha */
-            width: 100%;
-            height: 450px;
-            padding: 2%;
-            z-index: 1;
-            color: var(--black);
-            overflow: hidden;
-            transition: transform 0.5s ease-in-out;
-            /* Transición suave */
-        }
-
-        .main-bio {
-            width: 100vw;
-        }
-
-        .main_description__work {
-            padding: 5%;
-        }
-       
+    .modal {
+        margin-top: 1rem;
     }
+}
+
+@media (max-width: 768px) {
+    .hamburgues_menu {
+        display: block;
+    }
+
+    .button_hamburguer {
+        color: var(--black) !important;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .icon_hamburgues {
+        width: 3%;
+    }
+
+    .box-filtro {
+        display: flex;
+        gap: 10%;
+        flex-direction: column;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .main-bio,
+    .div-name_photo__yael,
+    .main_description__work,
+    .conteneiner_h3,
+    .background_skills>div,
+    .container,
+    .conteiner-card_skills {
+        width: 100%;
+    }
+
+    .div-descrition {
+        margin: 2rem;
+    }
+
+    .div-name_photo__yael {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .background_skills>div {
+        padding: 20px;
+    }
+
+    .div-name_photo__yael {
+        display: flex;
+        flex-direction: column;
+        margin-top: 32px;
+        align-items: center;
+    }
+
+    figure {
+        display: none;
+    }
+
+    .img_yael_y_sucafe {
+        display: none;
+    }
+
+    .modal-content {
+        height: auto;
+        max-height: 100vh;
+    }
+
+    .main-bio {
+        width: 100vw;
+    }
+
+    .main_description__work {
+        padding: 5%;
+    }
+    .background_header,  .icon_hamburgues {
+        background-color: #B19CDF;
+        margin: 0;
+    }
+
+    .menuItem {
+        background-color: tomato !important;
+    }
+}

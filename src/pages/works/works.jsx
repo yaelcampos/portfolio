@@ -31,10 +31,10 @@ const Works = () => {
             id: 'ux_ui'
         },
         {
-            href: 'https://www.figma.com/file/OLU18QmYArs0RBiI3rwOw0/portalTableros?type=design&node-id=2-2&mode=design&t=I4DADK7u3SVnbbKw-0',
-            titulo: 'Prototipo web para portal',
-            texto: 'Diseño para un portal de  tableros',
-            skills: 'Figma, Figma',
+            href: 'https://www.figma.com/proto/QWl8rmx06LjvrxGNHCIW1D/Sistema-Inventario-Patrimonio?node-id=1-2&p=f&t=4ECpEBQQF0bXiIzp-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2&show-proto-sidebar=1',
+            titulo: 'Prototipo web para Sistema Institucional de Patrimonio',
+            texto: 'Diseño de una interfaz para gestionar bienes institucionales, con funcionalidades como planilla de bienes, edición, filtros avanzados, personalización de columnas, historial de cambios y acciones según roles  . ',
+            skills: 'Figma',
             id: 'ux_ui'
         },
         {
@@ -48,10 +48,10 @@ const Works = () => {
             href: 'https://www.figma.com/design/KfkbwLBGu4WGECrfN8fwpm/AppSegundaVidaEco?node-id=0-1&t=3lPFMAzIYDGV4Bln-0',
             repositorio: 'https://github.com/yaelcampos/appSegundaVida',
             titulo: 'App Segunda Vida Deco WIP',
-            texto: 'Aplicacion sobre ',
+            texto: 'Aplicacion sobre',
             skills: 'Figma, React Native, Expo Go',
             id: 'react_native',
-        }
+        },
     ];
     const filteredCards = filter === 'all' ? cards : cards.filter(card => card.id === filter);
 

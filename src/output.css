@@ -16,7 +16,6 @@
   --off-white: #faf8f7;
   --just-white: #fff;
   --background: #774069;
-  --green: #c3efe3;
   --violet: #57457d;
   --soft-violet: #625387;
   --hue: 322;
@@ -49,13 +48,13 @@
 }
 
 .background_online {
-  background-color: var(--background);
+  background-color: rgba(119, 64, 105, 0.8);
   display: grid;
   justify-items: center;
   grid-template-columns: 1fr;
   gap: 20px;
   padding: 20px;
-  opacity: 0.8;
+  opacity: 1;
 }
 
 .p_footer {
@@ -81,14 +80,11 @@
 .background_header {
   display: flex;
   justify-content: center;
-  z-index: 2;
-  position: fixed;
+  position: sticky;
+  margin: 1rem 0;
+  top: 0;
   width: 100%;
-  background: rgba(32, 32, 35, 0.5019607843);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  transition: background 0.3s, color 0.3s;
-  /* Transiciones suaves */
+  z-index: 1;
 }
 
 .background_header.scrolled {
@@ -209,8 +205,8 @@ nav {
   right: 3%;
   bottom: 2%;
   transform: translate(-5%);
-  z-index: -1;
   background: #B19CDF;
+  opacity: 1;
   border-radius: 50%;
   width: 5%;
   padding: 0.8%;
@@ -361,7 +357,7 @@ h3 {
   color: var(--just-white);
 }
 
-#form {
+.Form {
   width: 100% !important;
   display: flex;
   flex-direction: column;
@@ -374,6 +370,7 @@ h3 {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
+  color: var(--black);
 }
 
 label {
@@ -414,22 +411,28 @@ textarea {
 }
 
 /*box of skills*/
-.box {
-  width: 120px;
-  height: 120px;
-  color: var(--background);
-  background-color: #f0f0f0;
-  padding: 10px;
-  border-radius: 50%;
-  border: 10px solid rgba(119, 64, 105, 0.8) !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+.box p {
+  display: inline-block;
+  position: relative;
+  color: var(--just-white);
 }
 
-.box p {
-  color: inherit;
+.box p::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1rem; /* Ajusta el grosor del tachado */
+  top: 50%; /* Coloca el tachado en el medio del texto */
+  left: 0;
+  background-color: #E91E63; /* Ajusta el color del tachado */
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.25s ease-out;
+  z-index: -1;
+}
+
+.box p:hover::after {
+  transform: scaleX(1);
 }
 
 /*works*/
@@ -533,7 +536,7 @@ textarea {
 }
 
 .conteiner-card_skills {
-  width: 100%;
+  width: 485px;
   display: flex;
   justify-content: space-evenly;
   flex-direction: row;
@@ -580,9 +583,12 @@ textarea {
   text-indent: -3.4em;
 }
 
-.span {
+span {
   font-weight: bold;
   margin-right: 1em;
+  margin-bottom: 0.5rem;
+  transform-origin: bottom left;
+  padding-left: 0.2rem;
 }
 
 .background_skills {
@@ -612,7 +618,7 @@ textarea {
 }
 
 .buttons:hover {
-  background-color: var(--green);
+  background-color: #B19CDF;
   padding: 8px;
   border-radius: 10px;
   width: fit-content;
@@ -653,7 +659,7 @@ li {
   gap: 20px;
   padding: 20px;
   --_g: radial-gradient(#0000 60%, var(--c1) 61% 63%, #0000 64% 77%, var(--c1) 78% 80%, #0000 81%);
-  --_c:, #0000 75%, var(--c2) 0;
+  --_c: , #0000 75%, var(--c2) 0;
   background: conic-gradient(at 12% 20% var(--_c)) calc(var(--s) * 0.44) calc(0.9 * var(--s)), conic-gradient(at 12% 20% var(--_c)) calc(var(--s) * -0.06) calc(0.4 * var(--s)), conic-gradient(at 20% 12% var(--_c)) calc(0.9 * var(--s)) calc(var(--s) * 0.44), conic-gradient(at 20% 12% var(--_c)) calc(0.4 * var(--s)) calc(var(--s) * -0.06), var(--_g), var(--_g) calc(var(--s) / 2) calc(var(--s) / 2) var(--c2);
   background-size: var(--s) var(--s);
 }
@@ -665,6 +671,7 @@ li {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 90px;
+    margin-bottom: 3rem;
   }
   .background_skills > div {
     padding: 15%;
@@ -676,10 +683,16 @@ li {
   .conteneiner_cards_of_works {
     padding: 30px;
   }
+  .modal {
+    margin-top: 1rem;
+  }
 }
 @media (max-width: 768px) {
   .hamburgues_menu {
     display: block;
+  }
+  .button_hamburguer {
+    color: var(--black) !important;
   }
   nav {
     display: none;
@@ -698,7 +711,6 @@ li {
   .div-name_photo__yael,
   .main_description__work,
   .conteneiner_h3,
-  .modal,
   .background_skills > div,
   .container,
   .conteiner-card_skills {
@@ -715,9 +727,6 @@ li {
   .background_skills > div {
     padding: 20px;
   }
-  .modal {
-    padding: 2%;
-  }
   .div-name_photo__yael {
     display: flex;
     flex-direction: column;
@@ -730,25 +739,22 @@ li {
   .img_yael_y_sucafe {
     display: none;
   }
-  .modal {
-    position: fixed;
-    top: 15%;
-    left: 100%;
-    /* Inicialmente fuera de la pantalla a la derecha */
-    width: 100%;
-    height: 450px;
-    padding: 2%;
-    z-index: 1;
-    color: var(--black);
-    overflow: hidden;
-    transition: transform 0.5s ease-in-out;
-    /* Transición suave */
+  .modal-content {
+    height: auto;
+    max-height: 100vh;
   }
   .main-bio {
     width: 100vw;
   }
   .main_description__work {
     padding: 5%;
+  }
+  .background_header, .icon_hamburgues {
+    background-color: #B19CDF;
+    margin: 0;
+  }
+  .menuItem {
+    background-color: tomato !important;
   }
 }
 
